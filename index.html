@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вкусный кофе — кофейня и десерты на Ташкентской, 138</title>
+  <meta name="description" content="Вкусный кофе: свежий кофе, макаронс и десерты ручной работы. Бронь столиков онлайн." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { blush: "#fde6ec", rose: "#f9c9d5", pink: "#f4a9bd", wine: "#7a1d3a", plum: "#4a1020" },
+        fontFamily: { serif: ["Cormorant Garamond", "Georgia", "serif"], sans: ["Manrope", "system-ui", "sans-serif"] },
+      } },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id], footer[id] { scroll-margin-top: 96px; }
+    body { color: #4a1020; background: linear-gradient(180deg,#fbd3dd 0%,#fde6ec 40%,#fbd3dd 100%); background-attachment: fixed; }
+    .h-serif { font-family: "Cormorant Garamond", Georgia, serif; color: #7a1d3a; font-weight: 600; letter-spacing: -.01em; }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .tile { background: rgba(255,255,255,.55); border-radius: 1.5rem; box-shadow: 0 14px 34px -18px rgba(122,29,58,.35); transition: transform .4s ease, box-shadow .4s ease; }
+    .tile:hover { transform: translateY(-5px); box-shadow: 0 22px 44px -18px rgba(122,29,58,.45); }
+    .tile:hover .zoom { transform: scale(1.07); }
+    .zoom { transition: transform .7s ease; }
+    .pill { display: inline-block; background: #fff; color: #7a1d3a; border-radius: 999px; padding: .45rem 1.1rem; font-size: .8rem; font-weight: 600; box-shadow: 0 6px 16px -8px rgba(122,29,58,.35); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: #7a1d3a; color: #fff; border-radius: 999px; padding: .85rem 1.7rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; transition: background .2s, transform .2s; }
+    .btn:hover { background: #5c1229; transform: translateY(-1px); }
+    .btn:disabled { opacity: .6; cursor: wait; transform: none; }
+    .btn-white { background: #fff; color: #7a1d3a; box-shadow: 0 8px 20px -10px rgba(122,29,58,.4); }
+    .btn-white:hover { background: #fff1f4; }
+    .field { width: 100%; background: #fff; border: 1px solid transparent; border-radius: 1rem; padding: .85rem 1.1rem; outline: none; transition: box-shadow .2s, border-color .2s; }
+    .field:focus { border-color: #7a1d3a; box-shadow: 0 0 0 4px rgba(122,29,58,.12); }
+    .lbl { display: block; margin: 0 0 .3rem .4rem; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7a1d3a; }
+    .float { animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-12px) rotate(var(--r,0deg)); } }
+    .typing span { display:inline-block; width:6px; height:6px; margin:0 2px; border-radius:50%; background:#f4a9bd; animation: bounce 1.2s infinite; }
+    .typing span:nth-child(2){ animation-delay:.15s } .typing span:nth-child(3){ animation-delay:.3s }
+    @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+
+<body class="font-sans antialiased">
+
+  <!-- ШАПКА: белая «плашка», как на слайдах -->
+  <header id="top" class="fixed inset-x-0 top-0 z-40 px-3 pt-3 md:px-6">
+    <div id="navbar" class="mx-auto flex max-w-6xl items-center justify-between rounded-full bg-white/95 px-5 py-3 shadow-[0_10px_30px_-14px_rgba(122,29,58,.45)] backdrop-blur md:px-8">
+      <a href="#top" class="h-serif text-2xl leading-none" data-s="brand_name">Вкусный кофе</a>
+
+      <nav class="hidden items-center gap-9 text-[13px] font-semibold md:flex">
+        <a href="#кофе" class="transition hover:text-wine">Кофе</a>
+        <a href="#десерты" class="transition hover:text-wine">Десерты</a>
+        <a href="#бронь" class="transition hover:text-wine">Бронь</a>
+        <a href="#контакты" class="transition hover:text-wine">Контакты</a>
+      </nav>
+
+      <a href="#бронь" class="btn !py-2.5 hidden md:inline-flex">Забронировать</a>
+      <button id="burger" class="rounded-full p-1 md:hidden" aria-label="Меню" aria-expanded="false">
+        <svg width="26" height="26" fill="none" stroke="#7a1d3a" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h18M4 13h18M4 18h18"/></svg>
+      </button>
+    </div>
+    <nav id="mobileNav" class="mx-auto mt-2 hidden max-w-6xl rounded-3xl bg-white/95 px-6 py-5 shadow-lg md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold">
+        <a href="#кофе">Кофе</a><a href="#десерты">Десерты</a><a href="#бронь">Бронь</a><a href="#контакты">Контакты</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="px-3 md:px-6">
+
+    <!-- HERO — большая «слайд-карточка» -->
+    <section class="mx-auto mt-24 max-w-6xl">
+      <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-rose via-pink/70 to-rose shadow-[0_30px_60px_-30px_rgba(122,29,58,.55)]">
+        <img data-s-img="hero_image" alt="" class="absolute inset-y-0 right-0 hidden h-full w-3/5 object-cover md:block" style="mask-image:linear-gradient(90deg,transparent,#000 35%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%)" />
+        <div class="relative grid min-h-[520px] items-center px-7 py-14 md:px-14">
+          <div class="max-w-xl">
+            <p class="reveal text-sm font-semibold uppercase tracking-[.2em] text-wine/80" data-s="hero_eyebrow">Кофейня и десерты</p>
+            <h1 class="reveal h-serif mt-3 whitespace-pre-line text-6xl leading-[.95] md:text-8xl" data-s="hero_title">Вкусный кофе,
+сладкие моменты</h1>
+            <p class="reveal mt-6 max-w-md text-base leading-relaxed text-plum/85 md:text-lg" data-s="hero_text"></p>
+            <div class="reveal mt-8 flex flex-wrap items-center gap-3">
+              <a href="#кофе" class="btn"><span data-s="hero_button">Смотреть меню</span></a>
+              <span class="pill">📍 <span data-s="address">Ташкентская, 138</span></span>
+            </div>
+          </div>
+          <img data-s-img="hero_image" alt="" class="mx-auto mt-10 w-64 md:hidden" />
+        </div>
+      </div>
+    </section>
+
+    <!-- КОФЕ -->
+    <section id="кофе" class="mx-auto max-w-6xl py-24">
+      <div class="reveal text-center">
+        <span class="pill">Меню</span>
+        <h2 class="h-serif mt-4 text-5xl md:text-6xl" data-s="coffee_title">Кофе</h2>
+        <p class="mx-auto mt-3 max-w-xl text-plum/75" data-s="coffee_subtitle"></p>
+      </div>
+      <div id="coffeeGrid" class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+    </section>
+
+    <!-- ДЕСЕРТЫ — коллаж -->
+    <section id="десерты" class="mx-auto max-w-6xl pb-24">
+      <div class="grid items-start gap-10 lg:grid-cols-5">
+        <div class="reveal relative lg:col-span-2 lg:sticky lg:top-28">
+          <div class="overflow-hidden rounded-[2rem] bg-white/50 shadow-[0_24px_50px_-26px_rgba(122,29,58,.6)]">
+            <img data-s-img="dessert_image" alt="Десерты" class="aspect-[4/5] w-full object-cover" loading="lazy" />
+          </div>
+          <span class="pill absolute -bottom-3 left-6">Ручная работа</span>
+        </div>
+        <div class="lg:col-span-3">
+          <div class="reveal">
+            <span class="pill">Сладкое</span>
+            <h2 class="h-serif mt-4 text-5xl md:text-6xl" data-s="dessert_title">Десерты и вкусности</h2>
+            <p class="mt-3 max-w-xl text-plum/75" data-s="dessert_subtitle"></p>
+          </div>
+          <div id="dessertGrid" class="mt-10 grid gap-5 sm:grid-cols-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- БРОНЬ -->
+    <section id="бронь" class="mx-auto max-w-3xl pb-24">
+      <div class="reveal text-center">
+        <span class="pill">Столик</span>
+        <h2 class="h-serif mt-4 text-5xl md:text-6xl" data-s="booking_title">Забронировать столик</h2>
+        <p class="mx-auto mt-3 max-w-lg text-plum/75" data-s="booking_subtitle"></p>
+      </div>
+
+      <form id="bookingForm" class="reveal mt-12 grid gap-4 rounded-[2rem] bg-white/55 p-6 shadow-[0_24px_50px_-30px_rgba(122,29,58,.6)] md:grid-cols-2 md:p-10" novalidate>
+        <label class="block"><span class="lbl">Имя</span>
+          <input name="name" class="field" required maxlength="60" autocomplete="name" placeholder="Как вас зовут" /></label>
+        <label class="block"><span class="lbl">Телефон</span>
+          <input name="phone" class="field" required maxlength="25" inputmode="tel" autocomplete="tel" placeholder="+7 ..." /></label>
+        <label class="block"><span class="lbl">Дата</span>
+          <input name="date" type="date" class="field" required /></label>
+        <label class="block"><span class="lbl">Время</span>
+          <input name="time" type="time" class="field" required /></label>
+        <label class="block md:col-span-2"><span class="lbl">Количество гостей</span>
+          <select name="guests" class="field" required>
+            <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10+</option>
+          </select></label>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+        <div class="mt-2 flex flex-col items-center gap-3 md:col-span-2">
+          <button id="bookBtn" class="btn" type="submit">Забронировать</button>
+          <p id="bookMsg" class="min-h-[1.25rem] text-sm" role="status"></p>
+        </div>
+      </form>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="контакты" class="mx-auto max-w-6xl pb-24">
+      <div class="grid items-stretch gap-8 lg:grid-cols-2">
+        <div class="reveal flex flex-col justify-center">
+          <span class="pill self-start">Контакты</span>
+          <h2 class="h-serif mt-4 text-5xl md:text-6xl" data-s="contacts_title">Ждём вас в гости</h2>
+
+          <dl class="mt-8 space-y-4">
+            <div class="tile !rounded-2xl px-5 py-4"><dt class="text-[11px] font-bold uppercase tracking-widest text-wine">Адрес</dt>
+              <dd class="mt-1 text-lg" data-s="address">Ташкентская, 138</dd></div>
+            <div class="tile !rounded-2xl px-5 py-4"><dt class="text-[11px] font-bold uppercase tracking-widest text-wine">Часы работы</dt>
+              <dd class="mt-1 text-lg" data-s="hours"></dd></div>
+            <div class="tile !rounded-2xl px-5 py-4"><dt class="text-[11px] font-bold uppercase tracking-widest text-wine">Телефон</dt>
+              <dd class="mt-1 text-lg"><a data-s="phone" data-s-tel class="hover:text-wine"></a></dd></div>
+          </dl>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <button id="copyAddr" class="btn" type="button">Скопировать адрес</button>
+            <a data-s-href="instagram" target="_blank" rel="noopener" class="btn btn-white">Instagram</a>
+          </div>
+        </div>
+
+        <div class="reveal relative min-h-[360px] overflow-hidden rounded-[2rem] bg-white/50 shadow-[0_24px_50px_-26px_rgba(122,29,58,.6)]">
+          <iframe id="mapFrame" title="Карта" class="absolute inset-0 h-full w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <span class="pill pointer-events-none absolute left-5 top-5">📍 Ташкентская, 138</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ПОДВАЛ «Спасибо!» -->
+  <footer class="mx-3 mb-3 overflow-hidden rounded-[2rem] bg-gradient-to-br from-rose to-pink/70 md:mx-6 md:mb-6">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 py-14 text-center">
+      <p class="h-serif text-6xl md:text-7xl">Спасибо!</p>
+      <p class="text-plum/80">Приходите за кофе — оставайтесь за десертами.</p>
+      <p class="mt-4 text-sm text-plum/70" data-s="footer_text">© Вкусный кофе</p>
+      <a href="admin.html" class="text-xs text-plum/40 hover:text-plum/80">Вход для персонала</a>
+    </div>
+  </footer>
+
+  <!-- AI-ЧАТ -->
+  <button id="chatToggle" aria-label="Открыть чат с бариста" class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-wine text-white shadow-xl transition hover:scale-105 hover:bg-plum">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+  </button>
+
+  <div id="chatBox" class="fixed bottom-24 right-5 z-50 hidden w-[calc(100vw-2.5rem)] max-w-sm origin-bottom-right scale-95 flex-col overflow-hidden rounded-[1.75rem] bg-blush opacity-0 shadow-2xl ring-1 ring-rose transition duration-200" style="height:min(520px,70vh)">
+    <div class="flex items-center justify-between bg-wine px-5 py-4 text-white">
+      <div><p class="h-serif !text-white text-2xl leading-none">Бариста</p><p class="mt-1 text-xs text-white/70">AI-помощник кофейни</p></div>
+      <button id="chatClose" aria-label="Закрыть" class="text-2xl leading-none text-white/80 hover:text-white">×</button>
+    </div>
+    <div id="chatLog" class="flex-1 space-y-3 overflow-y-auto px-4 py-4 text-sm"></div>
+    <form id="chatForm" class="flex gap-2 bg-white/70 p-3">
+      <input id="chatInput" class="field !py-2.5 text-sm ring-1 ring-rose" placeholder="Спросите про меню…" maxlength="500" autocomplete="off" />
+      <button class="btn !px-4 !py-2.5" type="submit" aria-label="Отправить">→</button>
+    </form>
+  </div>
+
+  <div id="toast" class="pointer-events-none fixed bottom-24 left-1/2 z-[60] -translate-x-1/2 translate-y-4 rounded-full bg-plum px-5 py-3 text-sm text-white opacity-0 shadow-lg transition duration-300" role="status"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
