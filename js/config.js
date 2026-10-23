@@ -16,7 +16,7 @@ window.CONFIG = {
 
   AI_PROVIDER: "gemini",          // "gemini" | "openai"
   AI_MODEL: "gemini-3.8-flash",   // для OpenAI, например: "gpt-4o-mini"
-  API_KEY: "",                    // ← вставьте ключ (нужен только в режиме "direct")
+  API_KEY: "AQ.Ab8RN6LSM76TEBYDv5JO4UPlRFE2didPJTa4Xckar1HvDHKfPw",                    // ← вставьте ключ (нужен только в режиме "direct")
 
   SYSTEM_PROMPT:
     "Ты — дружелюбный бариста кофейни «Вкусный кофе» по адресу Ташкентская, 138. " +
