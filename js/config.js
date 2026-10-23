@@ -7,7 +7,7 @@
 window.CONFIG = {
   // 1) URL веб-приложения Google Apps Script (после «Развернуть» → «Веб-приложение»).
   //    Пока пусто — сайт работает в ДЕМО-режиме (данные из js/api.js).
-  APPS_SCRIPT_URL: "",
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzbM6XGUodSe4hsYcJJsgWj3e2M3ThEXlqx3Nm3yMKf4pksfrwPsyUANnFa2Nu89oKZ/exec",
 
   // 2) AI-бариста ------------------------------------------------
   // "direct" — запросы идут из браузера напрямую в Gemini/OpenAI (КЛЮЧ ВИДЕН ВСЕМ, кто откроет код страницы).
