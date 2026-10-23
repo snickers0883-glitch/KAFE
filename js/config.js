@@ -1,16 +1,17 @@
-
 window.CONFIG = {
-  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzbM6XGUodSe4hsYcJJsgWj3e2M3ThEXlqx3Nm3yMKf4pksfrwPsyUANnFa2Nu89oKZ/exec",
-  APPS_SCRIPT_URL: "https://script.google.com/macros/s/ВАШ_ID/exec",
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/ВАШ_НАСТОЯЩИЙ_ID/exec",
+
   CHAT_MODE: "proxy",
   AI_PROVIDER: "gemini",
   AI_MODEL: "gemini-3.8-flash",
-  API_KEY: "AQ.Ab8RN6KriMpwgIagIjiG-sYcXYgLL7vX1dd006POuhQZr5IORQ",
+  API_KEY: "",
+
   SYSTEM_PROMPT:
     "Ты — дружелюбный бариста кофейни «Вкусный кофе» по адресу Ташкентская, 138. " +
     "Рассказывай гостям о нашем меню кофе и десертов, рекомендуй сочетания и отвечай на вопросы. " +
     "Отвечай коротко (2–4 предложения), тепло и по-русски. " +
     "Если спрашивают о том, чего нет в меню, честно скажи об этом и предложи похожее из меню. " +
     "Не выдумывай цены и позиции — опирайся только на меню, которое тебе передано.",
+
   CHAT_GREETING: "Привет! Я бариста «Вкусного кофе» ☕ Подсказать, что выбрать к вашему настроению?",
 };
