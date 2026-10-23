@@ -1,5 +1,5 @@
 window.CONFIG = {
-  APPS_SCRIPT_URL: "https://script.google.com/macros/s/ВАШ_НАСТОЯЩИЙ_ID/exec",
+  APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyltwQZ46KOD0ZK4Klpl3ZbypYZdGDwGO4YyvcgI4rqG7sZblOb6QomtPpKT_aD6ROojQ/exec",
 
   CHAT_MODE: "proxy",
   AI_PROVIDER: "gemini",
